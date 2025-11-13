@@ -1,0 +1,27 @@
+package com.app.payment;
+
+public class FundTransfer {
+	private Account acc1;
+	private Account acc2;
+	
+	public FundTransfer(Account a1, Account a2) {
+		this.acc1 = a1;
+		this.acc2 = a2;
+	}
+	
+	public FundTransfer transferFunds(double amount) {
+		if(acc1.balance() - amount < 0) {
+			return this;
+		}
+		
+		Account newAcc1 = new Account(acc1.accountNo(), acc1.balance() - amount);
+        Account newAcc2 = new Account(acc2.accountNo(), acc2.balance() + amount);
+		
+        return new FundTransfer(newAcc1, newAcc2);
+	}
+	
+	public void printBalances() {
+        System.out.println(acc1.accountNo() + " **** " + acc1.balance());
+        System.out.println(acc2.accountNo() + " **** " + acc2.balance());
+    }
+}

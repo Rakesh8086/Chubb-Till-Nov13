@@ -1,0 +1,6 @@
+package com.app.payment;
+
+public Account(String accountNo, String name, double balance) {
+
+
+}

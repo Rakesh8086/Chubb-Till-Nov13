@@ -1,0 +1,41 @@
+package com.app.payment;
+
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
+public class Types {
+	public static void main(String[] args) {
+		Predicate<Integer> odd = num -> num % 2 != 0;
+		System.out.println(odd.test(1));
+		
+		List<String> names = List.of("AAA", "AAB", "BAA", "ACA");
+		Predicate<String> startsWithA = s -> s.startsWith("A");
+		List<String> res = names.stream()
+		                             .filter(startsWithA)
+		                             .collect(Collectors.toList());
+		res.forEach(System.out::println);
+		// *************************************** //
+		Consumer<String> name = student->System.out.println("student name is " + student);
+		name.accept("AAA");
+		// *************************************** //
+		Supplier<Integer> val = () -> 500;
+	    System.out.println(val.get());
+	    Supplier<String> currentTime = () -> java.time.LocalTime.now().toString();
+        System.out.println(currentTime.get());
+        // *************************************** //
+		Function<Integer, Integer> add = i -> i + 100;
+	    System.out.println(add.apply(123));
+	    
+	    List<String> students = List.of("AAAA", "BBB", "C");
+		Function<String, Integer> len = s -> s.length();
+		List<Integer> lengths = students.stream()
+		                              .map(len)
+		                              .collect(Collectors.toList());
+		System.out.println(lengths); 
+		// *************************************** //
+	}
+}	

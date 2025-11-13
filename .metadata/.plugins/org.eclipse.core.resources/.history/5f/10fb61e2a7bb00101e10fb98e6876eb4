@@ -1,0 +1,24 @@
+package com.sample;
+
+import com.sample.Account;
+import com.sample.FundTransfer;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Account acc1 = new Account("AAA", 5000.00);
+		Account acc2 = new Account("BBB", 3000.00);
+		// System.out.println(acc1.accountNo() + " **** " + acc1.balance());
+		// System.out.println(acc2.accountNo() + " **** " + acc2.balance());
+		
+		
+		FundTransfer f1 = new FundTransfer(acc1, acc2);
+		f1.printBalances();
+		FundTransfer f2 = f1.transferFunds(5000.00);
+		f2.printBalances();
+		// System.out.println(acc1.accountNo() + " **** " + acc1.balance());
+		// System.out.println(acc2.accountNo() + " **** " + acc2.balance());
+	}
+
+}

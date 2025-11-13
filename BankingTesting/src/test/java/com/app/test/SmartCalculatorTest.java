@@ -1,0 +1,36 @@
+package com.app.test;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import com.app.SmartCalculator;
+import com.app.CalculatorService;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class SmartCalculatorTest {
+
+	@Test
+    void testPerformAddition() {
+        // 1️⃣ Create mock object
+		
+        CalculatorService mockService = Mockito.mock(CalculatorService.class);
+
+        // 2️⃣ Define behavior
+        when(mockService.add(5, 3)).thenReturn(19);   //it should return 8
+
+        // 3️⃣ Inject mock into MathApp
+        SmartCalculator mathApp = new SmartCalculator(mockService);
+
+        // 4️⃣ Call method under test
+        int result = mathApp.performAddition(5, 3);
+
+        // 5️⃣ Verify
+        assertEquals(19, result);
+
+        // 6️⃣ Optional: verify mock was called
+        verify(mockService).add(5, 3);
+    }
+
+}

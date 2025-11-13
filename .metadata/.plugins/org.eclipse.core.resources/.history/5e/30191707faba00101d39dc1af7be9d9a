@@ -1,0 +1,12 @@
+package com.app.bank;
+
+import java.util.Comparator;
+
+public class CustomComparator implements Comparator<Account> {
+
+    @Override
+    public int compare(Account a1, Account a2) {
+        // For descending order, reverse the usual comparison
+        return Integer.compare(a2.getAccountNumber(), a1.getAccountNumber());
+    }
+}

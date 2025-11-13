@@ -1,0 +1,30 @@
+package com.sample;
+
+import com.sample.Accounts;
+import com.sample.FundTransfer;
+
+public class FundTransfer {
+	private Accounts acc1;
+	private Accounts acc2;
+	
+	public FundTransfer(Accounts a1, Accounts a2) {
+		this.acc1 = a1;
+		this.acc2 = a2;
+	}
+	
+	public FundTransfer transferFunds(double amount) {
+		if(acc1.getBalance() - amount < 0) {
+			return this;
+		}
+		
+		Accounts newAcc1 = new Accounts(,acc1.getAccountNo(), acc1.getName(), acc1.getBalance() - amount);
+		Accounts newAcc2 = new Accounts(acc2.getAccountNo(), acc2.getName(), acc2.getBalance() + amount);
+		
+        return new FundTransfer(newAcc1, newAcc2);
+	}
+	
+	public void printBalances() {
+        System.out.println(acc1.getAccountNo() + " **** " + acc1.getBalance());
+        System.out.println(acc2.getAccountNo() + " **** " + acc2.getBalance());
+    }
+}

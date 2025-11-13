@@ -1,0 +1,18 @@
+package com.app.task1;
+
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        String filePath = "sales.csv";
+        List<Sale> sales = CSVReader.readSales(filePath);
+
+        if (sales.isEmpty()) {
+            System.out.println("No sales data found.");
+            return;
+        }
+
+        Report reportService = new Report();
+        reportService.printSummary(sales);
+    }
+}

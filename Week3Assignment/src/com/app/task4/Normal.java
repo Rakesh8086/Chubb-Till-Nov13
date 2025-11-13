@@ -1,0 +1,23 @@
+package com.app.task4;
+
+import java.util.*;
+
+public class Normal {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 3, 6, 4);
+
+        List<Integer> evenSquares = new ArrayList<>();
+
+        for(Integer n : numbers) {
+            if(n % 2 == 0) {
+                int square = n * n;
+                evenSquares.add(square);
+            }
+        }
+
+        Collections.sort(evenSquares);
+
+        System.out.println(evenSquares);
+    }
+
+}

@@ -1,0 +1,9 @@
+package com.app.payment;
+
+public record Account(String accountNo, String name, double balance) {
+
+	public Account(int i, String string, double d) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.app.task2;
+
+import java.util.concurrent.CompletableFuture;
+
+public class Order {
+    public CompletableFuture<String> getOrderDetails() {
+        return CompletableFuture.supplyAsync(() -> {
+            simulateDelay(1500);
+            return "Order: 3 items, Cost = 120";
+        });
+    }
+
+    private void simulateDelay(long ms) {
+        try { 
+        	Thread.sleep(ms); 
+        } catch (InterruptedException e) { 
+        	e.printStackTrace(); 
+        }
+    }
+}

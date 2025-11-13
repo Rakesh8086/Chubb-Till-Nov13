@@ -1,0 +1,25 @@
+package com.app.payment;
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class Sorting {
+    public static void main(String[] args) {
+        List<Accounts> accounts = Arrays.asList(
+                new Accounts(101, "AAA", 500.00),
+                new Accounts(102, "BBB", 600.00),
+                new Accounts(103, "CCC", 700.00),
+                new Accounts(104, "DDD", 800.00)
+        );
+
+        Function<Accounts, Integer> getAccountNumber = Accounts::getAccountNo();
+
+        List<Accounts> sorted = accounts.stream()
+                .sorted(Comparator.comparing(getAccountNumber)) // functional interface in action
+                .collect(Collectors.toList());
+
+        System.out.println("Accounts sorted by account number (ascending):");
+        sortedAccounts.forEach(System.out::println);
+    }
+}

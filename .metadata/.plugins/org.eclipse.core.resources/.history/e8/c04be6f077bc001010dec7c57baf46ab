@@ -1,0 +1,25 @@
+package com.app.test;
+
+import org.junit.jupiter.api.Test;
+
+import com.app.AccountService;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class AccountServiceTest {
+
+    @Test
+    void testDeposit() {
+        AccountService account = new AccountService();
+        account.deposit(100);
+        assertEquals(100, account.getBalance());
+    }
+
+    @Test
+    void testWithdraw() {
+        AccountService account = new AccountService();
+        account.deposit(200);
+        account.withdraw(50);
+        assertEquals(150, account.getBalance());
+    }
+}

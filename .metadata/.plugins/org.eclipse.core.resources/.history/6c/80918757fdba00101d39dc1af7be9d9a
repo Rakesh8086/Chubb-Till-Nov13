@@ -1,0 +1,15 @@
+package com.app.payment;
+
+import java.util.Comparator;
+
+public class CustomComparator implements Comparator<Accounts> {
+
+    @Override
+    public int compare(Accounts a1, Accounts a2) {
+        return Integer.compare(a1.getAccountNo(), a2.getAccountNo());
+    }
+    
+    public int compare(Accounts a1, Accounts a2) {
+        return a1.getName().compareTo(a2.getName());
+    }
+}

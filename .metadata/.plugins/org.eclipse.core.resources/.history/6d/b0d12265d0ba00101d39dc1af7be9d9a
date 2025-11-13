@@ -1,0 +1,11 @@
+package com.app.payment;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Account acc = new Account("1000", 5000.00);
+		System.out.println(acc.accountNo() + "****" + acc.balance());
+	}
+
+}

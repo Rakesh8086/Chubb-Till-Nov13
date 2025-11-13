@@ -1,0 +1,28 @@
+package com.app.task1;
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.stream.*;
+
+public class CSVReader {
+
+    public static List<Sale> readSales(String filePath) {
+        try (Stream<String> lines = Files.lines(Paths.get(filePath))) {
+            return lines.skip(1)
+                        .map(line -> line.split(","))
+                        .map(data -> new Sale(
+                                Integer.parseInt(data[0].trim()),
+                                data[1].trim(),
+                                data[2].trim(),
+                                Integer.parseInt(data[3].trim()),
+                                Double.parseDouble(data[4].trim()),
+                                LocalDate.parse(data[5].trim())))
+                        .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
+    }
+}

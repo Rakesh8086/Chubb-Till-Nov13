@@ -1,0 +1,22 @@
+package com.app.payment;
+
+import java.util.function.Consumer;
+import java.util.function.Producer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+public class Types {
+	public static void main(String[] args) {
+		Predicate<Integer> even = num -> num % 2 == 0;
+		System.out.println(even.test(1));
+		
+		Consumer<String> name = student->System.out.println("student name is " + student);
+		name.accept("AAA");
+		
+		Function<Integer, Integer> add = i -> i + 100;
+	    System.out.println(add.apply(123));
+	    
+	    Producer<Integer> val = num->System.out.println(val);
+	    val.accept(500);
+	}
+}	

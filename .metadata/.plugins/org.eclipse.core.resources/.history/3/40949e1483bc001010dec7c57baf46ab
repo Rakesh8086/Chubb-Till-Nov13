@@ -1,0 +1,22 @@
+package com.mycompany.app;
+
+public class App {
+    // SonarCloud will flag this line because Loggers should be private static final
+    private static final Logger logger = LogManager.getLogger(App.class);
+
+    public static void main(String[] args) {
+        logger.info("Application starting...");
+
+        // A simple method that SonarCloud might look at
+        int x = 5;
+        if (x > 10) {
+            // This path is not taken, but demonstrates a conditional
+            logger.warn("X is greater than 10!");
+        } else {
+            logger.debug("X is not greater than 10.");
+        }
+
+        logger.error("A critical error might have occurred for testing purposes.");
+        logger.info("Application finished.");
+    }
+}

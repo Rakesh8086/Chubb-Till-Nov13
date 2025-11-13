@@ -1,0 +1,7 @@
+2025-11-07 16:07:32 INFO  com.app.LoggingTest - Info Message — Normal flow information
+2025-11-07 16:07:32 WARN  com.app.LoggingTest - Warning Message — Something might be off
+2025-11-07 16:07:32 ERROR com.app.LoggingTest - Error Message — Something failed
+2025-11-07 16:07:32 FATAL com.app.LoggingTest - Fatal Message — Critical system failure
+2025-11-07 16:07:32 ERROR com.app.LoggingTest - Caught exception: / by zero
+java.lang.ArithmeticException: / by zero
+	at com.app.LoggingTest.main(LoggingTest.java:22) [main/:?]

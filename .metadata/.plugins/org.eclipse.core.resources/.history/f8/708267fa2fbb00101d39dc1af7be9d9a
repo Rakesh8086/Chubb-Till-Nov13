@@ -1,0 +1,34 @@
+package com.app.hdfc;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class SimpleExamples {
+	public static void main(String[] args) {
+        List<String> names = Arrays.asList("AAA", "AAB", "VAA", "CA", "A");
+
+        List<String> result = names.stream()
+                                   .filter(name -> name.endsWith("AA"))
+                                   .collect(Collectors.toList());
+
+        System.out.println(result); 
+        
+        List<String> len = names.stream()
+                .sorted(Comparator.comparing(String::length))
+                .collect(Collectors.toList());
+        System.out.println(len);
+        
+        List<String> name = Arrays.asList("A", "BB", "C", "DD", "EEE");
+        List<String> list = name.stream()
+                                 .collect(Collectors.toList());
+        Set<String> set = name.stream()
+                               .collect(Collectors.toSet());
+        Map<Integer, List<String>> grouped = name.stream()
+                                                  .collect(Collectors.groupingBy(String::length));
+        System.out.println(grouped);
+    }
+}
