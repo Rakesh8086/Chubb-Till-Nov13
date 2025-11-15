@@ -1,6 +1,0 @@
-package com.app.payment;
-
-public Account(String accountNo, double balance) {
-
-
-}

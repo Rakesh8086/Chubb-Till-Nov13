@@ -47,28 +47,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.mycompany.app"/>
-			<item value="com.app.loggingTest.sonarqube"/>
-			<item value="com.bankingTesting"/>
-			<item value="com.app.testing"/>
-			<item value="com.second.maven"/>
-			<item value="com.first.maven"/>
+			<item value="com.app.logDemo"/>
 		</list>
 		<list key="name">
-			<item value="my-sonar-project"/>
-			<item value="mavenSonarqube"/>
-			<item value="BankingTesting"/>
-			<item value="TestCaseWriting"/>
-			<item value="SecondMaven"/>
-			<item value="FirstMaven"/>
+			<item value="log4j2Maven"/>
 		</list>
 		<list key="artifactId">
-			<item value="my-sonar-project"/>
-			<item value="mavenSonarqube"/>
-			<item value="BankingTesting"/>
-			<item value="TestCaseWriting"/>
-			<item value="SecondMaven"/>
-			<item value="FirstMaven"/>
+			<item value="log4j2Maven"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

@@ -13,8 +13,8 @@ public class WordCounter {
 		int indiaCount = 0;
 		String line;
 				
-		try(BufferedReader br = new BufferedReader(new java.io.FileReader(fileName))) {
-            while((line = br.readLine()) != null) {
+		try(BufferedReader bufferReader = new BufferedReader(new java.io.FileReader(fileName))) {
+            while((line = bufferReader.readLine()) != null) {
                 String[] words = line.split("\\W+");
                 for(String word : words) {
                     if(word.equalsIgnoreCase("india")) {
